@@ -39,6 +39,16 @@ public class ModalWindowExample extends WebPage {
             }
         });
 
+        // on click on this editLink again I am showing the same model window
+        add(new AjaxLink<String>("editLink") {
+
+            @Override
+            public void onClick(final AjaxRequestTarget target) {
+                // Request target associated with current ajax request.
+                modalWindow.show(target);
+            }
+        });
+
         // model window is also a component we need to add it in the webpage
         add(modalWindow);
 
