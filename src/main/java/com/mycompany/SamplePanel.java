@@ -38,9 +38,8 @@ public class SamplePanel extends Panel {
 
         AjaxButton ajaxButton = new AjaxButton("submit") {
             @Override
-            protected void onSubmit(AjaxRequestTarget target) {
-                super.onSubmit(target);
-
+            protected void onSubmit(final AjaxRequestTarget target, final Form<?> form) {
+                super.onSubmit(target, form);
                 text.setEnabled(false);
                 gender.setEnabled(false);
 

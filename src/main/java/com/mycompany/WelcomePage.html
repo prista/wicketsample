@@ -29,6 +29,26 @@
         for scenarios like this, fragments is best approach. In short fragments are like in line panels.
 
         -->
+        <div wicket:id="container"></div>
     </form>
+
+
+    <!-- We are place this wicked fragment markup directly inside the web page,
+    that's why we need to pass and the instance of this web page
+    (WelcomePage in my case) as the markupProvider (third parameter)
+
+    Wicket will try to search the viewFragment markup in my webpage (внутри самой страницы, так как мы указывали this)
+
+
+    А если фрагмент добавить в форму, то в качестве провайдера будет именно ФОРМА и викет будет искать viewFragment в форме
+    П.С. Короче как я понял, markupProvider зависит от того, где в HTML у нас заDEFINE'ен сам тег фрагмента
+    -->
+    <wicket:fragment id="viewFragment">
+        <!--inline components here (like span)-->
+        <span wicket:id="label"></span>
+    </wicket:fragment>
+    <wicket:fragment id="editFragment">
+        <input type="text" wicket:id="textField"/>
+    </wicket:fragment>
 </body>
 </html>

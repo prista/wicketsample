@@ -9,6 +9,7 @@ import org.apache.wicket.markup.html.WebPage;
 public class ModalWindowExample extends WebPage {
 
     private ModalWindow modalWindow;
+    private String action;
 
     public ModalWindowExample() {
 
@@ -17,7 +18,7 @@ public class ModalWindowExample extends WebPage {
         modalWindow.setPageCreator(new ModalWindow.PageCreator() {
             @Override
             public Page createPage() {
-                return new WelcomePage();
+                return new WelcomePage(action);
             }
         });
 
@@ -35,6 +36,7 @@ public class ModalWindowExample extends WebPage {
             @Override
             public void onClick(final AjaxRequestTarget target) {
                 // Request target associated with current ajax request.
+                action = "view";
                 modalWindow.show(target);
             }
         });
@@ -45,6 +47,7 @@ public class ModalWindowExample extends WebPage {
             @Override
             public void onClick(final AjaxRequestTarget target) {
                 // Request target associated with current ajax request.
+                action = "edit";
                 modalWindow.show(target);
             }
         });
