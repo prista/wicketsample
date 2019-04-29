@@ -18,7 +18,8 @@ public class WicketApplication extends WebApplication
 	public Class<? extends WebPage> getHomePage()
 	{
 		//return HomePage.class; было так
-		return WelcomePage.class;
+		// return WelcomePage.class; vid 6 change
+		return ModalWindowExample.class;
 	}
 
 	/**

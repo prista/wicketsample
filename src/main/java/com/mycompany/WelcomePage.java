@@ -13,8 +13,8 @@ public class WelcomePage extends WebPage {
 
     public WelcomePage() {
         // panel is a reusable component that holds markup and other components
-/*        add(new SamplePanel("panel"));
-        add(new SamplePanel("panel1"));*/
+        add(new SamplePanel("panel"));
+        //add(new SamplePanel("panel1"));
 
         Form<?> form = new Form<Object>("form");
         TextField<String> textField = new TextField<>("textField", new Model<>());
