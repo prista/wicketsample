@@ -14,5 +14,29 @@
         <input type="button" wicket:id="submit" value="submit">
 
     </form>
+
+    <!--
+    Case: View Show Label
+    Case: Edit Show editable text box/ text field
+
+    We can create two panel
+        panel1: will have only label
+        panel2: will have only textfield
+    Based on the condition we will either add (display) panel1 or panel2
+
+    But this approach requires lot of efforts (усилий):
+    1) Create separate html for the two panels
+    2) Create separate class for the two panels
+
+    This will increase the number of files in your project and ultimately it will
+    become difficult to maintain our project
+
+    This approach is completely justified when you have complex components where user defined panels
+    are the best approach.
+
+    But what about the scenarios where we just need either a label or textfield,
+    for scenarios like this, fragments is best approach. In short fragments are like in line panels.
+
+    -->
 </body>
 </html>
