@@ -1,53 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:wicket="http://wicket.apache.org">
+<html xmlns:wicket="http://wicket.apache.org" xmlns:wicke="http://wicket.apache.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+
     <form wicket:id="form">
-        <!--
-        Case: View Show Label
-        Case: Edit Show editable text box/ text field
-
-        We can create two panel
-        panel1: will have only label
-        panel2: will have only textfield
-        Based on the condition we will either add (display) panel1 or panel2
-
-        But this approach requires lot of efforts (усилий):
-        1) Create separate html for the two panels
-        2) Create separate class for the two panels
-
-        This will increase the number of files in your project and ultimately it will
-        become difficult to maintain our project
-
-        This approach is completely justified when you have complex components where user defined panels
-        are the best approach.
-
-        But what about the scenarios where we just need either a label or textfield,
-        for scenarios like this, fragments is best approach. In short fragments are like in line panels.
-
-        -->
         <div wicket:id="container"></div>
     </form>
 
 
-    <!-- We are place this wicked fragment markup directly inside the web page,
-    that's why we need to pass and the instance of this web page
-    (WelcomePage in my case) as the markupProvider (third parameter)
-
-    Wicket will try to search the viewFragment markup in my webpage (внутри самой страницы, так как мы указывали this)
-
-
-    А если фрагмент добавить в форму, то в качестве провайдера будет именно ФОРМА и викет будет искать viewFragment в форме
-    П.С. Короче как я понял, markupProvider зависит от того, где в HTML у нас заDEFINE'ен сам тег фрагмента
-    -->
-    <wicket:fragment id="viewFragment">
-        <!--inline components here (like span)-->
+    <wicket:fragment wicket:id="viewFragment">
         <span wicket:id="label"></span>
     </wicket:fragment>
-    <wicket:fragment id="editFragment">
+    <wicket:fragment wicket:id="editFragment">
         <input type="text" wicket:id="textField"/>
     </wicket:fragment>
 </body>
