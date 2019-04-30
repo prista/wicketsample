@@ -41,7 +41,6 @@ public class ModalWindowExample extends WebPage {
             }
         });
 
-        // on click on this editLink again I am showing the same model window
         add(new AjaxLink<String>("editLink") {
 
             @Override
