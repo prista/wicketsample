@@ -18,16 +18,16 @@
 		"deployment". If no configuration is found, "development" is the default. -->
 
 	<filter>
-		<filter-name>HelloWorldApplication</filter-name>
+		<filter-name>NavomaticApplication</filter-name>
 		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
-			<param-value>com.tutorial.helloworld.HelloWorldApplication</param-value>
+			<param-value>com.tutorial.navomatic.NavomaticApplication</param-value>
 		</init-param>
 	</filter>
 
 	<filter-mapping>
-		<filter-name>HelloWorldApplication</filter-name>
+		<filter-name>NavomaticApplication</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 </web-app>
